@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(25, 26, 25);
+  margin: 0;
+}
+
+.imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.imagen_camaraman {
+  width: 250px;
+  height: 250px;
+}
+
+.numeros {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.conteo-maximo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#btnReiniciar {
+  margin: 0 auto;
+  width: 180px;
+  padding: 10px 20px;
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+#btnReiniciar:hover {
+  background-color: #e68400;
+  transform: scale(1.05);
+}
+
+#btnReiniciar:active {
+  transform: scale(0.95);
+}
+
+.volumen {
+  display: flex;
+  justify-content: center;
+}
+
+.text_volumen {
+  color: white;
+  margin-right: 5px;
+}

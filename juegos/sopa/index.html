@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sopa de Letras: Mario Bros</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Sopa de Letras: ¡Mario Bros!</h1>
+
+      <div class="game-area">
+        <div id="word-search-grid" class="word-search-grid"></div>
+
+        <div class="info-panel">
+          <h3>Palabras a buscar:</h3>
+          <ul id="word-list" class="word-list"></ul>
+          <button id="newGameButton">Nuevo Juego</button>
+        </div>
+      </div>
+
+      <div class="game-messages" id="startScreen">
+        <p>
+          Encuentra los nombres de tus personajes favoritos de Mario Bros
+          ocultos en la cuadrícula.
+        </p>
+        <p>¡Pueden estar en horizontal, vertical o diagonal!</p>
+        <button id="startButton">¡Comenzar!</button>
+      </div>
+
+      <div class="game-messages hidden" id="winScreen">
+        <h2>¡Felicidades!</h2>
+        <p>¡Has encontrado todas las palabras!</p>
+        <button id="playAgainButton">Jugar de Nuevo</button>
+      </div>
+    </div>
+
+    <!-- row volver atrás -->
+    <div class="volver">
+      <a href="../../">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ff9500"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M9 14l-4 -4l4 -4" />
+          <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- btn fullscreen -->
+    <div
+      class="fullscreen"
+      onclick="togglePantallaCompleta()"
+      id="btnFullscreen">
+      <!-- Icono inicial (expandir) -->
+      <svg
+        id="iconoFullscreen"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#ff9500"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M16 4l4 0l0 4" />
+        <path d="M14 10l6 -6" />
+        <path d="M8 20l-4 0l0 -4" />
+        <path d="M4 20l6 -6" />
+        <path d="M16 20l4 0l0 -4" />
+        <path d="M14 14l6 6" />
+        <path d="M8 4l-4 0l0 4" />
+        <path d="M4 4l6 6" />
+      </svg>
+    </div>
+    <script>
+      function togglePantallaCompleta() {
+        const elem = document.documentElement;
+        const icono = document.getElementById("iconoFullscreen");
+
+        if (!document.fullscreenElement) {
+          // Entrar a pantalla completa
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+          }
+
+          // Cambiar icono a "minimizar"
+          icono.innerHTML = `
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ff9500"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 9l4 0l0 -4" />
+          <path d="M3 3l6 6" />
+          <path d="M5 15l4 0l0 4" />
+          <path d="M3 21l6 -6" />
+          <path d="M19 9l-4 0l0 -4" />
+          <path d="M15 9l6 -6" />
+          <path d="M19 15l-4 0l0 4" />
+          <path d="M15 15l6 6" />
+        </svg>
+      `;
+        } else {
+          // Salir de pantalla completa
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+
+          // Cambiar icono a "expandir"
+          icono.innerHTML = `
+        <path d="M16 4l4 0l0 4" />
+        <path d="M14 10l6 -6" />
+        <path d="M8 20l-4 0l0 -4" />
+        <path d="M4 20l6 -6" />
+        <path d="M16 20l4 0l0 -4" />
+        <path d="M14 14l6 6" />
+        <path d="M8 4l-4 0l0 4" />
+        <path d="M4 4l6 6" />
+      `;
+        }
+      }
+      document.addEventListener("fullscreenchange", () => {
+        const icono = document.getElementById("iconoFullscreen");
+
+        if (!document.fullscreenElement) {
+          // Salió de pantalla completa → mostrar icono de "expandir"
+          icono.innerHTML = `
+      <path d="M16 4l4 0l0 4" />
+      <path d="M14 10l6 -6" />
+      <path d="M8 20l-4 0l0 -4" />
+      <path d="M4 20l6 -6" />
+      <path d="M16 20l4 0l0 -4" />
+      <path d="M14 14l6 6" />
+      <path d="M8 4l-4 0l0 4" />
+      <path d="M4 4l6 6" />
+    `;
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

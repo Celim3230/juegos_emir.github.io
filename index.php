@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts de google -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="./style/style.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <title>Emircinix</title>
+</head>
+
+<body>
+
+  <!-- btn fullscreen -->
+  <div class="fullscreen" onclick="togglePantallaCompleta()" id="btnFullscreen">
+    <!-- Icono inicial (expandir) -->
+    <svg id="iconoFullscreen" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+      stroke="#ff9500" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 4l4 0l0 4" />
+      <path d="M14 10l6 -6" />
+      <path d="M8 20l-4 0l0 -4" />
+      <path d="M4 20l6 -6" />
+      <path d="M16 20l4 0l0 -4" />
+      <path d="M14 14l6 6" />
+      <path d="M8 4l-4 0l0 4" />
+      <path d="M4 4l6 6" />
+    </svg>
+  </div>
+  <script>
+    function togglePantallaCompleta() {
+      const elem = document.documentElement;
+      const icono = document.getElementById("iconoFullscreen");
+
+      if (!document.fullscreenElement) {
+        // Entrar a pantalla completa
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        }
+
+        // Cambiar icono a "minimizar"
+        icono.innerHTML = `
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ff9500"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 9l4 0l0 -4" />
+          <path d="M3 3l6 6" />
+          <path d="M5 15l4 0l0 4" />
+          <path d="M3 21l6 -6" />
+          <path d="M19 9l-4 0l0 -4" />
+          <path d="M15 9l6 -6" />
+          <path d="M19 15l-4 0l0 4" />
+          <path d="M15 15l6 6" />
+        </svg>
+      `;
+      } else {
+        // Salir de pantalla completa
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+
+        // Cambiar icono a "expandir"
+        icono.innerHTML = `
+        <path d="M16 4l4 0l0 4" />
+        <path d="M14 10l6 -6" />
+        <path d="M8 20l-4 0l0 -4" />
+        <path d="M4 20l6 -6" />
+        <path d="M16 20l4 0l0 -4" />
+        <path d="M14 14l6 6" />
+        <path d="M8 4l-4 0l0 4" />
+        <path d="M4 4l6 6" />
+      `;
+      }
+    }
+  </script>
+
+  <!-- fin btn fullscreen -->
+  <div class="emircinix_div">
+    <img class="emircinix" src="./img/emircinix.jpg" alt="">
+  </div>
+
+  <div class="tarjetas">
+    <div class="card" style="width: 23rem;"><a href="juegos/pong/">
+        <img src="./img/pong.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Pong</h5>
+        <p class="card-text">Juega pong y descubre quién gana esta batalla.</p>
+        <div class="div_btn"><a href="juegos/pong/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/camaraman/">
+        <img src="./img/camaraman.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Cámaraman</h5>
+        <p class="card-text">Hace la mayor cantidad de cliks para obtener la puntuación más alta.</p>
+        <div class="div_btn"><a href="juegos/camaraman/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/culebrita/">
+        <img src="./img/culebrita.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Culebrita</h5>
+        <p class="card-text">Come para hacerte cada vez más largo a ver hasta dónde llegas.</p>
+        <div class="div_btn"><a href="juegos/culebrita/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/frases/">
+        <img src="./img/frases.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Frases</h5>
+        <p class="card-text">Descubre las frases o letras que te aparezcan con la menor cantidad de intentos.</p>
+        <div class="div_btn"><a href="juegos/frases/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tarjetas">
+    <div class="card" style="width: 23rem;"><a href="juegos/arkanoid/">
+        <img src="./img/arkaniod.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Arkanoid</h5>
+        <p class="card-text">Destruye los bloques hasta completar los 20 niveles.</p>
+        <div class="div_btn"><a href="juegos/arkanoid/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/asteroids/">
+        <img src="./img/asteroids.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Asteroids</h5>
+        <p class="card-text">Defiende la nave de los asteroides.</p>
+        <div class="div_btn"><a href="juegos/asteroids/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/carrera/">
+        <img src="./img/carrera.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Carrera</h5>
+        <p class="card-text">Alcanza la mayor puntuación superando los obstáculos.</p>
+        <div class="div_btn"><a href="juegos/carrera/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/matematico/">
+        <img src="./img/matematico.jpg" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Matemático</h5>
+        <p class="card-text">Ejercita las matemáticas con este divertido juego.</p>
+        <div class="div_btn">
+          <a href="juegos/matematico/">
+            <img class="play" src="./img/play.jpg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tarjetas">
+    <div class="card" style="width: 23rem;"><a href="juegos/rompecabezas/">
+        <img src="./img/rompecabezas.png" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Rompecabezas</h5>
+        <p class="card-text">Usa cualquier imagen y conviertela en un divertido rompecabezas.</p>
+        <div class="div_btn"><a href="juegos/rompecabezas/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/sopa/">
+        <img src="./img/sopa.png" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Sopa de letras</h5>
+        <p class="card-text">Completa esta sopa de letras con tus personajes favoritos de Mario Bros.</p>
+        <div class="div_btn"><a href="juegos/sopa/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/sudoku/">
+        <img src="./img/sudoku.png" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Sudoku</h5>
+        <p class="card-text">Completa los números de las filas horizontales y verticales sin que se repitan.</p>
+        <div class="div_btn"><a href="juegos/sudoku/">
+            <img class="play" src="./img/play.jpg" alt=""></a></div>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem;"><a href="juegos/laberinto/">
+        <img src="./img/laberinto.png" class="card-img-top" alt="...">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">Laberinto</h5>
+        <p class="card-text">Resuelve los diferentes laberintos para llegar hasta tu compañero.</p>
+        <div class="div_btn">
+          <a href="juegos/laberinto/">
+            <img class="play" src="./img/play.jpg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+#game {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+#wordDisplay {
+  font-size: 2rem;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+}
+
+#keyboard button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#keyboard {
+  margin: 20px 0;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#wordDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  max-width: 90%; /* evita que crezca más que el ancho del contenedor */
+  word-break: break-word; /* por si algo se pasa */
+  overflow-wrap: anywhere; /* asegura que no se desborde */
+}
+
+.palabra {
+  display: inline-flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.letra {
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+}
+
+.espacio {
+  width: 10px;
+  display: inline-block;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}

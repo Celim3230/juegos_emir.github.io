@@ -1,0 +1,160 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34; /* Fondo oscuro */
+  font-family: "Arial", sans-serif;
+  color: #f8f8f2; /* Color de texto claro */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-container {
+  background-color: #3a3f4a; /* Fondo más claro para el contenedor */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: clamp(300px, 90%, 500px); /* Ancho responsivo */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #61dafb; /* Color vibrante para el título */
+  margin-bottom: 25px;
+  font-size: clamp(1.8em, 5vw, 2.5em); /* Tamaño de fuente responsivo */
+}
+
+.score-display {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #a0a8b3;
+  font-weight: bold;
+}
+
+.question-area {
+  background-color: #1a1e24; /* Fondo para la pregunta y respuesta */
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#question {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+#answerInput {
+  width: 80%;
+  max-width: 200px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #555;
+  background-color: #444;
+  color: #f8f8f2;
+  font-size: 1.5em;
+  text-align: center;
+  outline: none; /* Quitar el borde de enfoque */
+  transition: border-color 0.3s ease;
+}
+
+#answerInput:focus {
+  border-color: #61dafb; /* Borde de enfoque azul */
+}
+
+button {
+  background: linear-gradient(
+    135deg,
+    #61dafb,
+    #21a1f1
+  ); /* Degradado atractivo */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Bordes redondeados */
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease; /* Transición suave al interactuar */
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    #21a1f1,
+    #61dafb
+  ); /* Cambio de degradado al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background: #6c757d; /* Color gris para botones deshabilitados */
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Espacio entre botones */
+}
+
+#feedback {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.correct {
+  color: #4caf50; /* Verde para respuesta correcta */
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.incorrect {
+  color: #e74c3c; /* Rojo para respuesta incorrecta */
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}

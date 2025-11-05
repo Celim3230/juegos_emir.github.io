@@ -1,0 +1,127 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  font-family: "Press Start 2P", cursive;
+  color: #f8f8f2;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Fuente pixelada alternativa si no se carga 'Press Start 2P' */
+  /* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+}
+
+.game-container {
+  background-color: #3a3f4a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: clamp(320px, 90%, 850px);
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #61dafb;
+  margin-bottom: 20px;
+  font-size: clamp(1.5em, 4vw, 2.2em);
+}
+
+.score-display {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #a0a8b3;
+  font-weight: bold;
+  min-height: 1.2em;
+}
+
+canvas {
+  background-color: #f7f7f7;
+  border: 5px solid #61dafb;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 200;
+  box-sizing: border-box;
+}
+
+.game-messages {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f8f8f2;
+  padding: 25px 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  min-width: 250px;
+  max-width: 90%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.game-messages h2 {
+  color: #e74c3c;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.game-messages p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+button {
+  background: linear-gradient(135deg, #61dafb, #21a1f1);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #21a1f1, #61dafb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}

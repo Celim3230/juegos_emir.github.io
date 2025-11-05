@@ -1,0 +1,125 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34; /* Fondo oscuro */
+  font-family: "Arial", sans-serif;
+  color: #f8f8f2; /* Color de texto claro */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-container {
+  background-color: #3a3f4a; /* Fondo más claro para el contenedor */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: clamp(320px, 90%, 700px); /* Ancho responsivo */
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #61dafb; /* Color vibrante para el título */
+  margin-bottom: 20px;
+  font-size: clamp(1.8em, 5vw, 2.5em); /* Tamaño de fuente responsivo */
+}
+
+canvas {
+  background-color: #000000; /* Fondo del laberinto */
+  border: 5px solid #61dafb; /* Borde que coincide con el título */
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%; /* El canvas se ajustará al ancho del contenedor */
+  height: auto; /* Mantener la proporción */
+  aspect-ratio: 1 / 1; /* Asegura que sea cuadrado (600x600) */
+  box-sizing: border-box;
+}
+
+.game-messages {
+  position: absolute; /* Para superponer sobre el canvas */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste final de centrado */
+  background-color: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente oscuro */
+  color: #f8f8f2;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  min-width: 300px;
+  max-width: 90%;
+  box-sizing: border-box;
+  z-index: 10; /* Asegura que esté por encima del canvas */
+}
+
+.game-messages h2 {
+  color: #2ecc71; /* Verde para "Has Ganado" */
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+
+.game-messages p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+button {
+  background: linear-gradient(
+    135deg,
+    #61dafb,
+    #21a1f1
+  ); /* Degradado atractivo */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Bordes redondeados */
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease; /* Transición suave al interactuar */
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(
+    135deg,
+    #21a1f1,
+    #61dafb
+  ); /* Cambio de degradado al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}

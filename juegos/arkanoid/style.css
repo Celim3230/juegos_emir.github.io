@@ -1,0 +1,149 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  font-family: "Arial", sans-serif;
+  color: #f8f8f2;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.game-container {
+  background-color: #3a3f4a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: clamp(320px, 90%, 650px);
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #61dafb;
+  margin-bottom: 20px;
+  font-size: clamp(1.8em, 5vw, 2.5em);
+}
+
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #a0a8b3;
+  font-weight: bold;
+}
+
+canvas {
+  background-color: #1a1e24;
+  border: 5px solid #61dafb;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 400;
+  box-sizing: border-box;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.game-messages {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #f8f8f2;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  min-width: 300px;
+  max-width: 90%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.game-messages h2 {
+  color: #e74c3c;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+
+.game-messages p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+button {
+  background: linear-gradient(135deg, #61dafb, #21a1f1);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #21a1f1, #61dafb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+#slowSpeedButton {
+  background: linear-gradient(135deg, #f0ad4e, #eb9321);
+}
+
+#slowSpeedButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #eb9321, #f0ad4e);
+}
+
+.hidden {
+  display: none;
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}

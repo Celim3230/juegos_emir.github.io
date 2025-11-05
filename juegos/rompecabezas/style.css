@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 90%;
+  width: 800px; /* Ancho máximo para el contenedor */
+}
+
+h1 {
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.controls label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.controls input[type="file"],
+.controls select,
+.controls button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.controls button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre el tablero y la imagen de referencia */
+  flex-wrap: wrap; /* Para que se apilen en pantallas pequeñas */
+}
+
+#puzzle-board {
+  display: grid;
+  /* Las propiedades grid-template-columns y grid-template-rows se establecerán con JS */
+  border: 2px solid #333;
+  background-color: #eee;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  width: 500px; /* Tamaño base del tablero */
+  height: 500px; /* Debe ser un cuadrado */
+  margin: 0 auto;
+}
+
+.puzzle-piece {
+  width: 100%;
+  height: 100%;
+  background-size: 500px 500px; /* Asegura que la imagen de fondo cubra todo el original */
+  border: 1px solid #ccc; /* Separación sutil entre piezas */
+  box-sizing: border-box; /* Para incluir el borde en el tamaño total */
+  cursor: grab;
+  transition: transform 0.1s ease-out; /* Animación ligera al arrastrar */
+  opacity: 1; /* Por defecto visible */
+}
+
+.puzzle-piece.dragging {
+  opacity: 0.7;
+  transform: scale(1.05);
+  z-index: 100; /* Asegura que la pieza arrastrada esté por encima de otras */
+}
+
+.puzzle-piece.correct {
+  border: 1px solid #28a745; /* Borde verde para piezas correctas */
+}
+
+#original-image-preview {
+  border: 1px dashed #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#original-image-preview h3 {
+  margin-top: 0;
+  color: #555;
+}
+
+#reference-image {
+  max-width: 250px; /* Tamaño de la imagen de referencia */
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.message {
+  margin-top: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.message.success {
+  color: #28a745; /* Verde para éxito */
+}
+
+.message.error {
+  color: #dc3545; /* Rojo para error */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #puzzle-board {
+    width: 300px; /* Reducir el tamaño del tablero en pantallas pequeñas */
+    height: 300px;
+  }
+
+  .puzzle-piece {
+    background-size: 300px 300px; /* Ajustar el background-size al nuevo tamaño del tablero */
+  }
+
+  #reference-image {
+    max-width: 150px; /* Reducir la imagen de referencia */
+  }
+}
+
+.fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.volver {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  cursor: pointer;
+}
